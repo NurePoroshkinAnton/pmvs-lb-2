@@ -46,9 +46,7 @@ udpServer.on("message", (msg, rinfo) => {
         return
     }
 
-    console.log(
-        `Отримано число через UDP: ${num} від ${rinfo.address}:${rinfo.port}`
-    )
+    console.log(`Отримано число через UDP: ${num}`)
     const result = isPalindrome(num) ? "Yes" : "No"
     udpServer.send(result, rinfo.port, rinfo.address)
 })
